@@ -317,8 +317,12 @@
       border-radius: 30px; font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 20px; letter-spacing: 3px;
     }
 
-    .qr-box { width: 220px; height: 220px; background: white; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3); }
-    .qr-box img { width: 200px; height: 200px; object-fit: contain; }
+    .qr-section { display: flex; flex-direction: row; justify-content: center; align-items: stretch; gap: 30px; }
+    
+    .qr-box { width: clamp(250px, 35vmin, 450px); height: clamp(250px, 35vmin, 450px); background: white; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3); padding: 20px; }
+    .qr-box img { width: 100%; height: 100%; object-fit: contain; }
+
+    /* F11 화면이 아닐 때 스크롤을 억제하던 압축 코드 삭제. "단순 박스 크기보다 내용 식별 등 본질적 가독성이 더 중요"한 대표님 피드백 반영 완료 */
 
     /* =============================================
        반응형 대응 (Responsive Media Queries)
@@ -444,7 +448,7 @@
       <div class="qr-section" style="width: 100%; max-width: 1400px;">
         <div class="glass-panel" style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
           <h3 style="margin-bottom: 20px; font-size: clamp(24px, 3vw, 36px);">📱 빅데이터 LAB 입장</h3>
-          <div class="qr-box" style="width: 250px; height: 250px; padding: 15px; margin-bottom: 20px;">
+          <div class="qr-box">
             <img src="https://ooo9luzdoplzs8wq.public.blob.vercel-storage.com/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%9E%A9QR.png" alt="QR Code" style="width: 100%; height: 100%; object-fit: contain;">
           </div>
           <button onclick="window.open(WEBAPP_URL, '_blank')" style="padding: 12px 30px; border-radius: 30px; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); font-family: 'Jua'; font-size: 18px; cursor: pointer;">
